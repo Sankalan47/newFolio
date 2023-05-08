@@ -1,6 +1,7 @@
 import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/Routes";
 import { Container } from "@chakra-ui/react";
-import Header from "./components/Header/Header";
 
 function App() {
   return (
@@ -11,12 +12,12 @@ function App() {
       centerContent
       minH={"100vh"}
       padding={{
-        lg: "5em 2.5em 5em 2.5em",
-        sm: "2.5em 1.2em 2.5em 1.2em",
+        base: "2.5em 1.25em 2.5em 1.25em",
         md: "5em 2.5em 5em 2.5em",
+        lg: "5em 2.5em 5em 2.5em",
       }}
     >
-      <Header />
+      <RouterProvider router={router} />
     </Container>
   );
 }

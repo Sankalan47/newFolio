@@ -1,0 +1,19 @@
+.twitter__btn {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: min-content; /* 48px */
+  height: min-content; /* 48px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 12px 12px 12px;
+  background: var(--blue);
+  color: var(--text);
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 50%;
+}
