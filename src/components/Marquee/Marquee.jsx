@@ -45,7 +45,7 @@ const _ = {
       <SiMongodb />
     </Box>
   ),
-  speed: 3,
+  speed: 2,
   threshold: 0.014,
   wheelFactor: 1.8,
   dragFactor: 1.2,

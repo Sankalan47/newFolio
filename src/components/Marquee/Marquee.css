@@ -20,11 +20,11 @@
 
   align-items: center;
   cursor: -webkit-grab;
-  color: #e6d5b8 !important;
+  color: #fff !important;
 }
 
 .item {
-  font-size: 2em;
+  font-size: 3em;
   letter-spacing: -0.05em;
   padding-right: 0.25em;
   white-space: nowrap;

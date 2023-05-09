@@ -48,7 +48,12 @@ const Header = () => {
             justifyContent="space-between"
             width={"100%"}
           >
-            <Avatar name="Sankalan Dasgupta" height={"60px"} width={"60px"} />
+            <Avatar
+              name="Sankalan Dasgupta"
+              height={"100px"}
+              width={"100px"}
+              src="../../../public/icon.png"
+            />
             <TweeterBtn />
           </Box>
           <Text

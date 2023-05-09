@@ -1,5 +1,6 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import { motion, isValidMotionProp } from "framer-motion";
 import "./Navbar.css";
 import { BsFillFolderFill } from "react-icons/bs";
 import { AiOutlineRise } from "react-icons/ai";

@@ -19,7 +19,7 @@ const data = {
       end: "",
       stack: ["React", "Angular", "Express", "Socket.io", "Redux"],
       description: ["hello", "bye", "go"],
-      background: "#6532f2",
+      background: "#6A35FF",
       color: "#fff",
       link: "https://www.p360.com",
     },
@@ -31,8 +31,8 @@ const data = {
       end: "Jul, 2022",
       stack: ["React", "Angular", "Express", "Socket.io", "Redux"],
       description: ["hello", "bye", "go"],
-      background: "#6532f2",
-      color: "#fff",
+      background: "#ffa133",
+      color: "#000",
       link: "https://www.p360.com",
     },
   ],
@@ -69,15 +69,18 @@ const Experience = () => {
             color={exp.color}
             padding={"1.2em"}
             marginBottom={"1.2em"}
-            borderRadius={"14px"}
+            borderRadius={"5px"}
+            border={"2px solid white"}
           >
             <Box
               display={"flex"}
               justifyContent={"space-between"}
               alignItems={"center"}
             >
-              <Text fontSize={"1.75em"}>{exp.role}</Text>
-              <Text fontSize={"1em"}>
+              <Text fontSize={"1.75em"} fontWeight={700}>
+                {exp.role}
+              </Text>
+              <Text fontSize={"1em"} fontWeight={500}>
                 {exp.start} - {exp.end ? exp.end : "Present"}
               </Text>
             </Box>
@@ -93,7 +96,7 @@ const Experience = () => {
                   fontSize={"1em"}
                   key={stack}
                   width={"min-content"}
-                  color={"var(--text-light)"}
+                  color={exp.color}
                 >
                   {stack}
                 </Text>
