@@ -5,6 +5,7 @@ import {
   shouldForwardProp,
   UnorderedList,
   ListItem,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 
@@ -14,7 +15,7 @@ const data = {
       id: 1,
       role: "Software Engineer",
       company: "P360",
-      start: "July, 2022",
+      start: "Jul, 2022",
       end: "",
       stack: ["React", "Angular", "Express", "Socket.io", "Redux"],
       description: ["hello", "bye", "go"],
@@ -26,8 +27,8 @@ const data = {
       id: 2,
       role: "Intern",
       company: "P360",
-      start: "February, 2022",
-      end: "July, 2022",
+      start: "Feb, 2022",
+      end: "Jul, 2022",
       stack: ["React", "Angular", "Express", "Socket.io", "Redux"],
       description: ["hello", "bye", "go"],
       background: "#6532f2",
@@ -61,13 +62,13 @@ const Experience = () => {
         >
           <Box
             as={motion.div}
-            // whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 0.98 }}
             width={"100%"}
+            zIndex={2}
             background={exp.background}
             color={exp.color}
-            padding={"1em"}
-            margin={"1.2em"}
+            padding={"1.2em"}
+            marginBottom={"1.2em"}
             borderRadius={"14px"}
           >
             <Box
@@ -75,19 +76,29 @@ const Experience = () => {
               justifyContent={"space-between"}
               alignItems={"center"}
             >
-              <Text fontSize={28}>{exp.role}</Text>
-              <Text fontSize={23}>
+              <Text fontSize={"1.75em"}>{exp.role}</Text>
+              <Text fontSize={"1em"}>
                 {exp.start} - {exp.end ? exp.end : "Present"}
               </Text>
             </Box>
-            <Text fontSize={23}>{exp.company}</Text>
-            <Box display={"flex"} alignItems={"center"}>
+            <Text fontSize={"1.43em"}>{exp.company}</Text>
+            <SimpleGrid
+              columns={{ sm: 10, md: 10, base: 3 }}
+              // width={"100%"}
+              spacingX="10px"
+              spacingY="5px"
+            >
               {exp.stack.map((stack) => (
-                <Text fontSize={20} key={stack}>
-                  {stack}&nbsp;
+                <Text
+                  fontSize={"1em"}
+                  key={stack}
+                  width={"min-content"}
+                  color={"var(--text-light)"}
+                >
+                  {stack}
                 </Text>
               ))}
-            </Box>
+            </SimpleGrid>
             <UnorderedList>
               {exp.description.map((desc) => (
                 <ListItem key={desc}>{desc}</ListItem>

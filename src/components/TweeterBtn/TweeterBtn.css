@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
   padding: 12px 12px 12px 12px;
-  background: var(--blue);
+  background: var(--sheet);
   color: var(--text);
   overflow: visible;
   position: relative;

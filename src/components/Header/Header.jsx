@@ -11,6 +11,7 @@ import "./Header.css";
 import TweeterBtn from "../TweeterBtn/TweeterBtn";
 import Navbar from "../Navbar/Navbar";
 import { Outlet } from "react-router-dom";
+import InteractiveMarquee from "../Marquee/Marquee";
 const Header = () => {
   const ChakraBox = chakra(motion.div, {
     /**
@@ -41,7 +42,9 @@ const Header = () => {
         >
           <Box
             display="flex"
+            flexDirection={"column"}
             alignItems="center"
+            gap={"20px"}
             justifyContent="space-between"
             width={"100%"}
           >
@@ -57,10 +60,13 @@ const Header = () => {
             I&apos;m Sankalan, Software Engineer at P360. I focus on building
             our marketing site. With tools like Angular, React and Express.
           </Text>
+          <Box maxW={{ sm: "300px", base: "300px", md: "100%" }}>
+            <InteractiveMarquee />
+          </Box>
           <Navbar />
         </Box>
       </ChakraBox>
-      <Container maxW={{ md: "740px", lg: "918px" }} mt={"50px"}>
+      <Container maxW={{ md: "740px", lg: "918px" }} mt={"50px"} padding={0}>
         <Outlet />
       </Container>
     </>

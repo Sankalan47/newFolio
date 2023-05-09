@@ -1,0 +1,36 @@
+.cont {
+  width: 100%;
+  overflow: hidden;
+  color: #e6d5b8;
+}
+
+.loader {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.bg {
+  height: 100%;
+  width: 100%;
+  background-color: #e6d5b8;
+}
+
+.marquee {
+  display: flex;
+
+  align-items: center;
+  cursor: -webkit-grab;
+  color: #e6d5b8 !important;
+}
+
+.item {
+  font-size: 2em;
+  letter-spacing: -0.05em;
+  padding-right: 0.25em;
+  white-space: nowrap;
+}
+
+.drag {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
