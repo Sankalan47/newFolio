@@ -52,7 +52,7 @@ const Header = () => {
               name="Sankalan Dasgupta"
               height={"100px"}
               width={"100px"}
-              src="../../../public/icon.png"
+              src="/assets/icon.png"
             />
             <TweeterBtn />
           </Box>
