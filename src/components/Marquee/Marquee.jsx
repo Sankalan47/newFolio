@@ -12,7 +12,7 @@ import { AiFillHtml5 } from "react-icons/ai";
 import { useEffect, useRef } from "react";
 import { useRafLoop } from "react-use";
 import { useWindowSize } from "@react-hook/window-size";
-import "./marquee.css";
+import "./Marquee.css";
 
 // Defining Variants
 
