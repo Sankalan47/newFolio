@@ -1,6 +1,5 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
-import { motion, isValidMotionProp } from "framer-motion";
 import "./Navbar.css";
 import { BsFillFolderFill } from "react-icons/bs";
 import { AiOutlineRise } from "react-icons/ai";
@@ -34,7 +33,7 @@ const Navbar = () => {
             to={tab.url}
             key={tab.name}
             className={({ isActive }) =>
-              isActive ? `${tab.activeClass} link__gray` : "link__gray"
+              isActive ? `active link__gray` : "link__gray"
             }
           >
             {tab.icon}&nbsp; {tab.name}
