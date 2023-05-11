@@ -5,6 +5,8 @@ import {
   chakra,
   shouldForwardProp,
   Container,
+  useColorMode,
+  AvatarBadge,
 } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 import "./Header.css";
@@ -12,6 +14,7 @@ import TweeterBtn from "../TweeterBtn/TweeterBtn";
 import Navbar from "../Navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import InteractiveMarquee from "../Marquee/Marquee";
+import { MdLightMode, MdDarkMode } from "react-icons/md";
 const Header = () => {
   const ChakraBox = chakra(motion.div, {
     /**
@@ -20,18 +23,19 @@ const Header = () => {
     shouldForwardProp: (prop) =>
       isValidMotionProp(prop) || shouldForwardProp(prop),
   });
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
       <ChakraBox
-        initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.3,
-          delay: 0.3,
-        }}
+      // initial={{ opacity: 0, scale: 1 }}
+      // animate={{ opacity: 1, scale: 1 }}
+      // transition={{
+      //   duration: 0.3,
+      //   delay: 0.3,
+      // }}
       >
         <Box
-          maxW={{ lg: "700", md: "700", sm: "350" }}
+          maxW={{ lg: "700", md: "700", sm: "700" }}
           gap={"50px"}
           display={"flex"}
           height={"min-content"}
@@ -53,19 +57,40 @@ const Header = () => {
               height={"100px"}
               width={"100px"}
               src="/assets/icon.png"
-            />
+              onClick={toggleColorMode}
+            >
+              <AvatarBadge boxSize="1.9em">
+                <Avatar
+                  size="sm"
+                  icon={
+                    colorMode === "light" ? <MdLightMode /> : <MdDarkMode />
+                  }
+                  fontSize="2em"
+                  background={
+                    colorMode === "light" ? "white" : "blackAlpha.900"
+                  }
+                  color={"orange.500"}
+                />
+              </AvatarBadge>
+            </Avatar>
             <TweeterBtn />
           </Box>
           <Text
+            as={"p"}
             fontSize={24}
             fontWeight={700}
-            color={"white"}
+            // color={"white"}
             textAlign={{ lg: "center", sm: "left", md: "center" }}
           >
-            I&apos;m Sankalan, Software Engineer at P360. I focus on building
-            our marketing site. With tools like Angular, React and Express.
+            {"I'm Sankalan, Software Engineer at"}{" "}
+            <Text as="span" color={"purple.400"}>
+              P360
+            </Text>{" "}
+            {
+              ". I focus on building ourweb app for managing our it solutions. With tools like Angular,React and Nodejs."
+            }
           </Text>
-          <Box maxW={{ sm: "300px", base: "300px", md: "100%" }}>
+          <Box maxW={{ sm: "90vw", base: "90vw", md: "100%" }}>
             <InteractiveMarquee />
           </Box>
           <Navbar />

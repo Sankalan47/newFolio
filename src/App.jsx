@@ -7,7 +7,7 @@ function App() {
   return (
     <Container
       maxW="100vw"
-      minW={"360px"}
+      minW={"270px"}
       bg="transparent"
       centerContent
       minH={"100vh"}

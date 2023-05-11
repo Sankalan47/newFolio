@@ -1,4 +1,9 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import {
+  SimpleGrid,
+  Link,
+  useColorModeValue,
+  useColorMode,
+} from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { BsFillFolderFill } from "react-icons/bs";
@@ -25,19 +30,44 @@ const Navbar = () => {
       activeClass: "active__blog",
     },
   ];
+  const { colorMode } = useColorMode();
+
+  const bg = useColorModeValue("orange.400", "orange.500");
+  // const borderCol = useColorModeValue("blackAlpha.500", "gray.400");
   return (
     <>
       <SimpleGrid columns={{ md: 3, sm: 1 }} spacing={"10px"} width={"100%"}>
         {tabsArr.map((tab) => (
-          <NavLink
+          <Link
+            as={NavLink}
             to={tab.url}
             key={tab.name}
-            className={({ isActive }) =>
-              isActive ? `active link__gray` : "link__gray"
+            width={"100%"}
+            height={"60px"}
+            padding={"12px 20px 12px 20px"}
+            background="var(--chakra-colors-whiteAlpha-100)"
+            // color="var(--chakra-colors-blackAlpha-700)"
+            fontWeight={700}
+            alignItems="center"
+            display="flex"
+            justifyContent="center"
+            fontSize="18px"
+            borderRadius="13px"
+            lineHeight="1.5em"
+            letterSpacing="-0.2px"
+            textAlign="center"
+            border={
+              colorMode === "light" && `1px solid var(--chakra-colors-gray-300)`
             }
+            _activeLink={{
+              background: bg,
+              color: "var(--chakra-colors-whiteAlpha-900)",
+              border: "none}",
+            }}
+            _hover={{ textDecoration: "none" }}
           >
             {tab.icon}&nbsp; {tab.name}
-          </NavLink>
+          </Link>
         ))}
       </SimpleGrid>
     </>

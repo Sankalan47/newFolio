@@ -1,24 +1,25 @@
-.link__gray {
+/* .link__gray {
   width: 100%;
   height: 60px;
   padding: 12px 20px 12px 20px;
-  background-color: var(--black);
-  color: var(--text);
+  background: var(--chakra-colors-whiteAlpha-900);
+  color: var(--chakra-colors-blackAlpha-700);
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 13px;
   line-height: 1.5em;
   letter-spacing: -0.2px;
   text-align: center;
-  border: 2px solid var(--text);
-}
+  border: 1px solid var(--chakra-colors-gray-200);
+} */
 
 .active {
-  background: var(--yellow);
-  color: var(--black);
+  background: var(--chakra-colors-orange-400);
+  color: var(--chakra-colors-whiteAlpha-900);
+  border: none;
 }
 /* .active__exp {
   background: var(--yellow);

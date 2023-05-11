@@ -1,7 +1,9 @@
 .cont {
   width: 100%;
   overflow: hidden;
-  color: #e6d5b8;
+  /* color: #e6d5b8; */
+  /* color: var(--chakra); */
+  color: var(--chakra-colors-gray-400);
 }
 
 .loader {
@@ -20,7 +22,7 @@
 
   align-items: center;
   cursor: -webkit-grab;
-  color: #fff !important;
+  /* color: #fff !important; */
 }
 
 .item {

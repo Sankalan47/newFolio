@@ -1,13 +1,15 @@
 import {
   Box,
   Text,
-  chakra,
-  shouldForwardProp,
   UnorderedList,
   ListItem,
   SimpleGrid,
+  Grid,
+  GridItem,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { motion, isValidMotionProp } from "framer-motion";
+import { motion } from "framer-motion";
+import AnimatedCard from "../AnimatedCard/AnimatedCard";
 
 const data = {
   experience: [
@@ -39,76 +41,71 @@ const data = {
 };
 
 const Experience = () => {
-  const ChakraBox = chakra(motion.div, {
-    /**
-     * Allow motion props and non-Chakra props to be forwarded.
-     */
-    shouldForwardProp: (prop) =>
-      isValidMotionProp(prop) || shouldForwardProp(prop),
-  });
+  const bg = useColorModeValue("blackAlpha.50", "blackAlpha.300");
+
   return (
     <>
       {data.experience.map((exp) => (
-        <ChakraBox
-          initial={{ opacity: 0, scale: 0.3, y: 200 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          animate={{ scale: 1, y: 0 }}
-          transition={{
-            duration: 0.2,
-            delay: 0.1,
-          }}
-          key={exp.id}
-        >
+        <AnimatedCard key={exp.id}>
           <Box
             as={motion.div}
             whileHover={{ scale: 0.98 }}
             width={"100%"}
-            zIndex={2}
-            background={exp.background}
-            color={exp.color}
+            background={bg}
+            // color={"var(--chakra-colors-black)"}
             padding={"1.2em"}
             marginBottom={"1.2em"}
-            borderRadius={"5px"}
-            border={"2px solid white"}
+            borderRadius={"18px"}
           >
-            <Box
-              display={"flex"}
-              justifyContent={"space-between"}
-              alignItems={"center"}
-            >
-              <Text fontSize={"1.75em"} fontWeight={700}>
-                {exp.role}
-              </Text>
-              <Text fontSize={"1em"} fontWeight={500}>
-                {exp.start} - {exp.end ? exp.end : "Present"}
-              </Text>
-            </Box>
-            <Text fontSize={"1.43em"}>{exp.company}</Text>
+            <Grid templateColumns="repeat(5, 1fr)">
+              <GridItem colSpan={3}>
+                <Text fontSize={{ base: "150%" }} fontWeight={700}>
+                  {exp.role}
+                </Text>
+                <Text fontSize={{ base: "1.43em" }}>{exp.company}</Text>
+              </GridItem>
+              <GridItem colSpan={2}>
+                <Text
+                  fontSize={{ base: "1em" }}
+                  fontWeight={500}
+                  float={"right"}
+                >
+                  {exp.start} - {exp.end ? exp.end : "Present"}
+                </Text>
+              </GridItem>
+            </Grid>
             <SimpleGrid
-              columns={{ sm: 10, md: 10, base: 3 }}
-              // width={"100%"}
+              columns={{ sm: 4, md: 6, base: 3, lg: 10 }}
               spacingX="10px"
-              spacingY="5px"
+              spacingY="10px"
             >
               {exp.stack.map((stack) => (
                 <Text
-                  fontSize={"1em"}
+                  fontSize={{ base: "1em" }}
                   key={stack}
                   width={"min-content"}
-                  color={exp.color}
+                  // color={"var(--chakra-colors-black)"}
                 >
                   {stack}
                 </Text>
               ))}
             </SimpleGrid>
+            <br />
             <UnorderedList>
               {exp.description.map((desc) => (
-                <ListItem key={desc}>{desc}</ListItem>
+                <ListItem key={desc}>
+                  <Text
+                    fontSize={{ base: "1.2em" }}
+                    lineHeight={2}
+                    fontWeight={500}
+                  >
+                    {desc}
+                  </Text>
+                </ListItem>
               ))}
             </UnorderedList>
           </Box>
-        </ChakraBox>
+        </AnimatedCard>
       ))}
     </>
   );
