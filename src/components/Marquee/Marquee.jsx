@@ -71,15 +71,9 @@ const MarqueeItem = ({ content, speed }) => {
     rect.current = item.current.getBoundingClientRect();
   }, [width, height]);
 
-  const loop = (e) => {
+  const loop = () => {
     x.current -= speed.get();
     setX();
-
-    // const delta = (e - buffer.current) / 1000;
-    // const c = Math.max(1 / 60 / delta, 1);
-    // buffer.current = e;
-    // x.current -= speed.get() / c;
-    // setX();
   };
   useRafLoop(loop, true);
 
