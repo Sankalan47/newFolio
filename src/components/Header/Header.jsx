@@ -27,12 +27,12 @@ const Header = () => {
   return (
     <>
       <ChakraBox
-      // initial={{ opacity: 0, scale: 1 }}
-      // animate={{ opacity: 1, scale: 1 }}
-      // transition={{
-      //   duration: 0.3,
-      //   delay: 0.3,
-      // }}
+        initial={{ opacity: 0, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.2,
+          delay: 0.1,
+        }}
       >
         <Box
           maxW={{ lg: "700", md: "700", sm: "700" }}
@@ -53,6 +53,7 @@ const Header = () => {
             width={"100%"}
           >
             <Avatar
+              cursor={"pointer"}
               name="Sankalan Dasgupta"
               height={"100px"}
               width={"100px"}
@@ -82,12 +83,12 @@ const Header = () => {
             // color={"white"}
             textAlign={{ lg: "center", sm: "left", md: "center" }}
           >
-            {"I'm Sankalan, Software Engineer at"}{" "}
+            {"Hi!, I'm Sankalan Dasgupta, Software Engineer at"}{" "}
             <Text as="span" color={"purple.400"}>
               P360
             </Text>{" "}
             {
-              ". I focus on building ourweb app for managing our it solutions. With tools like Angular,React and Nodejs."
+              ". I focus on building our web applications for managing our IOT solutions. With tools like Angular,React and Nodejs."
             }
           </Text>
           <Box maxW={{ sm: "90vw", base: "90vw", md: "100%" }}>

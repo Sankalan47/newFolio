@@ -1,40 +1,46 @@
 import PropTypes from "prop-types";
-import { Box, Image, Text, Divider } from "@chakra-ui/react";
+import { Box, Image, Text, Divider, useColorMode } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import AnimatedCard from "../../AnimatedCard/AnimatedCard";
+import ElevatedButton from "../../ElevatedButton/ElevatedButton";
+
 const Blog = ({ blogData }) => {
+  const { colorMode } = useColorMode();
+
   return (
     <>
       <AnimatedCard>
         <Box
+          cursor={"pointer"}
           as={motion.article}
           whileHover={{ scale: 0.98 }}
           borderRadius={"5px"}
-          background={"#131934"}
+          border={"1px"}
+          borderColor={colorMode === "light" ? "gray.300" : "gray.600"}
           padding={"1rem"}
+          _hover={{ textDecoration: "underline" }}
         >
           <Image
+            aspectRatio={"1.9"}
             src={blogData.coverImage}
             fallback="Loading"
             alt={blogData.slug}
             borderRadius={"5px"}
           />
-        </Box>
-        <br />
-        <Divider />
-        <br />
-        <Box width={"100%"}>
-          <Text
-            fontSize={{ base: 24 }}
-            fontWeight={700}
-            // _hover={}
-          >
-            {blogData.title}
-          </Text>
-          <Text fontSize={{ base: 16 }} color={"gray.500"} fontWeight={700}>
-            {blogData.brief.slice(0, -120)}
-            {"..."}
-          </Text>
+          <br />
+          <Divider />
+          <br />
+          <Box width={"100%"}>
+            <Text fontSize={{ base: 24 }} fontWeight={700}>
+              {blogData.title}
+            </Text>
+            <Text fontSize={{ base: 14 }} color={"gray.500"} fontWeight={700}>
+              {blogData.brief.slice(0, -120)}
+              {"..."}
+            </Text>
+            <br />
+            <ElevatedButton slug={blogData.slug}>Read More</ElevatedButton>
+          </Box>
         </Box>
       </AnimatedCard>
     </>
