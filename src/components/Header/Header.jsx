@@ -35,7 +35,7 @@ const Header = () => {
         }}
       >
         <Box
-          maxW={{ lg: "700", md: "700", sm: "700" }}
+          maxW={{ lg: "900", md: "700", sm: "700" }}
           gap={"50px"}
           display={"flex"}
           height={"min-content"}
@@ -97,7 +97,7 @@ const Header = () => {
           <Navbar />
         </Box>
       </ChakraBox>
-      <Container maxW={{ md: "740px", lg: "918px" }} mt={"50px"} padding={0}>
+      <Container maxW={{ md: "700", lg: "1000" }} mt={"50px"} padding={0}>
         <Outlet />
       </Container>
     </>

@@ -21,11 +21,11 @@ const data = {
       end: "",
       stack: ["React", "Angular", "Express", "Socket.io", "Redux"],
       description: [
-        "Created re-usable components that could be easily integrated and customized for different scenarios. Reduced the complexity and redundancy of our codebase, and improved the performance and maintainability of our system.",
+        "Created re-usable components. Reduced the complexity and redundancy of our codebase, and improved the performance and maintainability of our system.",
         "Implemented Cookie based authentication to ensure application security. Using Nodejs and Azure frontdoor.",
         "Re-fractored the entire codebase and reduced bundle size by 50% to achieve higher performance",
         "Ensured frontend performance metrics and increased web-vitals score upto 20%",
-        "Developed and optimized apis in nodejs to authenticate and associate devices to the user into the application",
+        "Developed and optimized apis in nodejs to authenticate and associate devices to the user into the application.",
       ],
       background: "#6A35FF",
       color: "#fff",
@@ -39,9 +39,9 @@ const data = {
       end: "Jul, 2022",
       stack: ["React", "Angular", "Express", "Socket.io", "Redux"],
       description: [
-        "Created Re-usable components to increase scalability",
-        "Created Apis using Nodejs",
-        "Used websockets to create api to gather live data of the devices to ensure 24/7 live monitoring",
+        "Created Re-usable components to increase scalability.",
+        "Created Apis using Nodejs.",
+        "Used websockets to create api to gather live data of the devices to ensure 24/7 live monitoring.",
       ],
       background: "#ffa133",
       color: "#000",
@@ -51,7 +51,7 @@ const data = {
 };
 
 const Experience = () => {
-  const bg = useColorModeValue("blackAlpha.50", "blackAlpha.300");
+  const bg = useColorModeValue("gray.500", "gray.500");
 
   return (
     <>
@@ -105,12 +105,14 @@ const Experience = () => {
               {exp.description.map((desc) => (
                 <ListItem key={desc}>
                   <Text
-                    fontSize={{ base: "1.1em" }}
+                    fontSize={{ base: "1em" }}
                     lineHeight={2}
-                    fontWeight={500}
+                    letterSpacing={1.5}
+                    fontWeight={400}
                   >
                     {desc}
                   </Text>
+                  <br />
                 </ListItem>
               ))}
             </UnorderedList>

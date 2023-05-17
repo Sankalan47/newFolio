@@ -45,7 +45,7 @@ const Navbar = () => {
             width={"100%"}
             height={"60px"}
             padding={"12px 20px 12px 20px"}
-            background="var(--chakra-colors-whiteAlpha-100)"
+            background="var(--chakra-colors-whiteAlpha-300)"
             // color="var(--chakra-colors-blackAlpha-700)"
             fontWeight={700}
             alignItems="center"
