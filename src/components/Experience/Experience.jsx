@@ -51,7 +51,7 @@ const data = {
 };
 
 const Experience = () => {
-  const bg = useColorModeValue("gray.500", "gray.500");
+  const bg = useColorModeValue("gray.100", "gray.500");
 
   return (
     <>

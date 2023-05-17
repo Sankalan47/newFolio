@@ -5,6 +5,7 @@ import AnimatedCard from "../../AnimatedCard/AnimatedCard";
 import ElevatedButton from "../../ElevatedButton/ElevatedButton";
 
 const Blog = ({ blogData }) => {
+  const url = "https://sankalan.hashnode.dev/" + blogData.slug;
   const { colorMode } = useColorMode();
 
   return (
@@ -20,26 +21,28 @@ const Blog = ({ blogData }) => {
           padding={"1rem"}
           _hover={{ textDecoration: "underline" }}
         >
-          <Image
-            aspectRatio={"1.9"}
-            src={blogData.coverImage}
-            fallback="Loading"
-            alt={blogData.slug}
-            borderRadius={"5px"}
-          />
-          <br />
-          <Divider />
-          <br />
-          <Box width={"100%"}>
-            <Text fontSize={{ base: 24 }} fontWeight={700}>
-              {blogData.title}
-            </Text>
-            <Text fontSize={{ base: 14 }} color={"gray.500"} fontWeight={700}>
-              {blogData.brief.slice(0, -120)}
-              {"..."}
-            </Text>
+          <Box as="a" href={url} target="_blank" rel="noopener noreferrer">
+            <Image
+              aspectRatio={"1.9"}
+              src={blogData.coverImage}
+              fallback="Loading"
+              alt={blogData.slug}
+              borderRadius={"5px"}
+            />
             <br />
-            <ElevatedButton slug={blogData.slug}>Read More</ElevatedButton>
+            <Divider />
+            <br />
+            <Box width={"100%"}>
+              <Text fontSize={{ base: 24 }} fontWeight={700}>
+                {blogData.title}
+              </Text>
+              <Text fontSize={{ base: 14 }} color={"gray.500"} fontWeight={700}>
+                {blogData.brief.slice(0, -120)}
+                {"..."}
+              </Text>
+              <br />
+              <ElevatedButton slug={blogData.slug}>Read More</ElevatedButton>
+            </Box>
           </Box>
         </Box>
       </AnimatedCard>
