@@ -1,6 +1,7 @@
 import { Box, Text, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import AnimatedCard from "../AnimatedCard/AnimatedCard";
+import Description from "./Description/Description";
 
 const data = {
   experience: [
@@ -15,7 +16,7 @@ const data = {
         "Developed re-usable components. Reduced the complexity and redundancy of our codebase, and improved the maintainability of our system.",
         "Implemented Cookie based authentication to ensure application security. Using Nodejs and Azure frontdoor.",
         "Re-fractored the entire codebase and reduced bundle size by 50% to achieve higher performance",
-        "Ensured frontend performance metrics and increased web-vitals score upto 20%",
+        "Ensured frontend performance metrics and increased Lighthouse score upto 20%",
         "Developed and optimized apis in nodejs to authenticate and associate devices to the user into the application.",
       ],
       background: "#6A35FF",
@@ -30,9 +31,9 @@ const data = {
       end: "Jul, 2022",
       stack: ["React", "Angular", "Express", "Socket.io", "Redux"],
       description: [
-        "Created Re-usable components to increase scalability.",
-        "Created Apis using Nodejs.",
-        "Used websockets to create api to gather live data of the devices to ensure 24/7 live monitoring.",
+        "Developed re-usable components to increase scalability.",
+        "Created and optimized Apis using Nodejs.",
+        "Used Websockets to create api to gather live data of the devices to ensure 24/7 live monitoring.",
       ],
       background: "#ffa133",
       color: "#000",
@@ -93,17 +94,7 @@ const Experience = () => {
             <br />
 
             {exp.description.map((desc) => (
-              <Text
-                key={desc}
-                fontSize={{ base: "0.8em", md: "1em" }}
-                lineHeight={2}
-                letterSpacing={1.5}
-                fontWeight={400}
-                color={"#8f9ba8"}
-                marginBottom={"0.7em"}
-              >
-                {desc}
-              </Text>
+              <Description key={desc} desc={desc} />
             ))}
           </Box>
         </AnimatedCard>
