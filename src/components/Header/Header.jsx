@@ -5,8 +5,6 @@ import {
   chakra,
   shouldForwardProp,
   Container,
-  useColorMode,
-  AvatarBadge,
 } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 import "./Header.css";
@@ -14,16 +12,12 @@ import TweeterBtn from "../TweeterBtn/TweeterBtn";
 import Navbar from "../Navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import InteractiveMarquee from "../Marquee/Marquee";
-import { MdLightMode, MdDarkMode } from "react-icons/md";
+
 const Header = () => {
   const ChakraBox = chakra(motion.div, {
-    /**
-     * Allow motion props and non-Chakra props to be forwarded.
-     */
     shouldForwardProp: (prop) =>
       isValidMotionProp(prop) || shouldForwardProp(prop),
   });
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
       <ChakraBox
@@ -53,34 +47,17 @@ const Header = () => {
             width={"100%"}
           >
             <Avatar
-              cursor={"pointer"}
               name="Sankalan Dasgupta"
               height={"100px"}
               width={"100px"}
               src="/assets/icon.png"
-              onClick={toggleColorMode}
-            >
-              <AvatarBadge boxSize="1.9em">
-                <Avatar
-                  size="sm"
-                  icon={
-                    colorMode === "light" ? <MdLightMode /> : <MdDarkMode />
-                  }
-                  fontSize="2em"
-                  background={
-                    colorMode === "light" ? "white" : "blackAlpha.900"
-                  }
-                  color={"orange.500"}
-                />
-              </AvatarBadge>
-            </Avatar>
+            ></Avatar>
             <TweeterBtn />
           </Box>
           <Text
             as={"p"}
-            fontSize={24}
-            fontWeight={700}
-            // color={"white"}
+            fontSize={{ lg: 24, base: 20 }}
+            fontWeight={500}
             textAlign={{ lg: "center", sm: "left", md: "center" }}
           >
             {"Hi!, I'm Sankalan Dasgupta, Software Engineer at"}{" "}

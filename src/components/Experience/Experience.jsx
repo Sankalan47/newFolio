@@ -1,13 +1,4 @@
-import {
-  Box,
-  Text,
-  UnorderedList,
-  ListItem,
-  SimpleGrid,
-  Grid,
-  GridItem,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Text, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import AnimatedCard from "../AnimatedCard/AnimatedCard";
 
@@ -21,7 +12,7 @@ const data = {
       end: "",
       stack: ["React", "Angular", "Express", "Socket.io", "Redux"],
       description: [
-        "Created re-usable components. Reduced the complexity and redundancy of our codebase, and improved the performance and maintainability of our system.",
+        "Developed re-usable components. Reduced the complexity and redundancy of our codebase, and improved the maintainability of our system.",
         "Implemented Cookie based authentication to ensure application security. Using Nodejs and Azure frontdoor.",
         "Re-fractored the entire codebase and reduced bundle size by 50% to achieve higher performance",
         "Ensured frontend performance metrics and increased web-vitals score upto 20%",
@@ -51,8 +42,6 @@ const data = {
 };
 
 const Experience = () => {
-  const bg = useColorModeValue("gray.100", "gray.500");
-
   return (
     <>
       {data.experience.map((exp) => (
@@ -61,18 +50,20 @@ const Experience = () => {
             as={motion.div}
             whileHover={{ scale: 0.98 }}
             width={"100%"}
-            background={bg}
-            // color={"var(--chakra-colors-black)"}
+            background={"#151417"}
             padding={"1.2em"}
             marginBottom={"1.2em"}
             borderRadius={"18px"}
+            border={"1px solid #fffa83"}
           >
             <Grid templateColumns="repeat(5, 1fr)">
               <GridItem colSpan={3}>
                 <Text fontSize={{ base: "150%" }} fontWeight={700}>
                   {exp.role}
                 </Text>
-                <Text fontSize={{ base: "1.43em" }}>{exp.company}</Text>
+                <Text fontSize={{ base: "1.43em" }} color={"#ffca80"}>
+                  {exp.company}
+                </Text>
               </GridItem>
               <GridItem colSpan={2}>
                 <Text
@@ -94,28 +85,26 @@ const Experience = () => {
                   fontSize={{ base: "1em" }}
                   key={stack}
                   width={"min-content"}
-                  // color={"var(--chakra-colors-black)"}
                 >
                   {stack}
                 </Text>
               ))}
             </SimpleGrid>
             <br />
-            <UnorderedList>
-              {exp.description.map((desc) => (
-                <ListItem key={desc}>
-                  <Text
-                    fontSize={{ base: "1em" }}
-                    lineHeight={2}
-                    letterSpacing={1.5}
-                    fontWeight={400}
-                  >
-                    {desc}
-                  </Text>
-                  <br />
-                </ListItem>
-              ))}
-            </UnorderedList>
+
+            {exp.description.map((desc) => (
+              <Text
+                key={desc}
+                fontSize={{ base: "0.8em", md: "1em" }}
+                lineHeight={2}
+                letterSpacing={1.5}
+                fontWeight={400}
+                color={"#8f9ba8"}
+                marginBottom={"0.7em"}
+              >
+                {desc}
+              </Text>
+            ))}
           </Box>
         </AnimatedCard>
       ))}

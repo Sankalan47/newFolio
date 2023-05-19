@@ -37,7 +37,7 @@ const Blog = ({ blogData }) => {
                 {blogData.title}
               </Text>
               <Text fontSize={{ base: 14 }} color={"gray.500"} fontWeight={700}>
-                {blogData.brief.slice(0, -120)}
+                {blogData.brief.slice(0, -200)}
                 {"..."}
               </Text>
               <br />

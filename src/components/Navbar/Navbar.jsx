@@ -24,9 +24,9 @@ const Navbar = () => {
       activeClass: "active__proj",
     },
     {
-      name: "Blogs",
+      name: "Articles",
       icon: <MdLibraryBooks />,
-      url: "/blogs",
+      url: "/articles",
       activeClass: "active__blog",
     },
   ];
