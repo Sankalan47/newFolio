@@ -1,10 +1,11 @@
+import React, { Suspense } from "react";
 import {
   Box,
-  Text,
   Avatar,
   chakra,
   shouldForwardProp,
   Container,
+  Skeleton,
 } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 import "./Header.css";
@@ -12,6 +13,8 @@ import TweeterBtn from "../TweeterBtn/TweeterBtn";
 import Navbar from "../Navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import InteractiveMarquee from "../Marquee/Marquee";
+// import Heading from "./Heading/Heading";
+const Heading = React.lazy(() => import("./Heading/Heading"));
 
 const Header = () => {
   const ChakraBox = chakra(motion.div, {
@@ -54,20 +57,9 @@ const Header = () => {
             ></Avatar>
             <TweeterBtn />
           </Box>
-          <Text
-            as={"p"}
-            fontSize={{ lg: 24, base: 20 }}
-            fontWeight={500}
-            textAlign={{ lg: "center", sm: "left", md: "center" }}
-          >
-            {"Hi!, I'm Sankalan Dasgupta, Software Engineer at"}{" "}
-            <Text as="span" color={"purple.400"}>
-              P360
-            </Text>{" "}
-            {
-              ". I focus on building our web applications for managing our IOT solutions. With tools like Angular,React and Nodejs."
-            }
-          </Text>
+          <Suspense fallback={<Skeleton height={"6.75em"} />}>
+            <Heading />
+          </Suspense>
           <Box maxW={{ sm: "90vw", base: "90vw", md: "100%" }}>
             <InteractiveMarquee />
           </Box>
