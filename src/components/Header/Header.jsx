@@ -6,6 +6,7 @@ import {
   shouldForwardProp,
   Container,
   Skeleton,
+  Stack,
 } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 import "./Header.css";
@@ -57,7 +58,13 @@ const Header = () => {
             ></Avatar>
             <TweeterBtn />
           </Box>
-          <Suspense fallback={<Skeleton height={"6.75em"} />}>
+          <Suspense
+            fallback={
+              <Stack width={"100%"}>
+                <Skeleton height="6.75em" borderRadius={5} />
+              </Stack>
+            }
+          >
             <Heading />
           </Suspense>
           <Box maxW={{ sm: "90vw", base: "90vw", md: "100%" }}>
