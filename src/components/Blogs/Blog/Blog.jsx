@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
-import { Box, Image, Text, Divider, useColorMode } from "@chakra-ui/react";
+import { Box, Image, Text, Divider } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import AnimatedCard from "../../AnimatedCard/AnimatedCard";
 import ElevatedButton from "../../ElevatedButton/ElevatedButton";
 
 const Blog = ({ blogData }) => {
   const url = "https://sankalan.hashnode.dev/" + blogData.slug;
-  const { colorMode } = useColorMode();
 
   return (
     <>
@@ -17,13 +16,14 @@ const Blog = ({ blogData }) => {
           whileHover={{ scale: 0.98 }}
           borderRadius={"5px"}
           border={"1px"}
-          borderColor={colorMode === "light" ? "gray.300" : "gray.600"}
+          borderColor={"#fffa83"}
           padding={"1rem"}
           _hover={{ textDecoration: "underline" }}
         >
           <Box as="a" href={url} target="_blank" rel="noopener noreferrer">
             <Image
               aspectRatio={"1.9"}
+              height={200}
               src={blogData.coverImage}
               fallback="Loading"
               alt={blogData.slug}

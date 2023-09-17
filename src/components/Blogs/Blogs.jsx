@@ -38,11 +38,13 @@ const Blogs = () => {
         </>
       )}
       {!isLoading && !error && data.user.publication.posts.length && (
-        <SimpleGrid columns={{ lg: 2, base: 1 }} spacingX="2em" spacingY="1em">
+        <>
+          {/* <SimpleGrid columns={{ base: 1 }} spacingX="2em" spacingY="1em"> */}
           {data.user.publication.posts.map((blog) => (
             <Blog key={blog.title} blogData={blog} />
           ))}
-        </SimpleGrid>
+          {/* </SimpleGrid> */}
+        </>
       )}
     </>
   );
