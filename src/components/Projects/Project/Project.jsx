@@ -39,7 +39,13 @@ const Project = ({ name, url, desc, img, tags }) => {
             />
           </Box>
           <br />
-          <Box width={"100%"}>
+          <Box
+            width={"100%"}
+            as="a"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Text
               fontSize={{ base: 20, md: 24 }}
               fontWeight={700}
