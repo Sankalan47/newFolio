@@ -2,6 +2,7 @@ import { Box, Text, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import AnimatedCard from "../AnimatedCard/AnimatedCard";
 import Description from "./Description/Description";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const data = {
   experience: [
@@ -62,8 +63,18 @@ const Experience = () => {
                 <Text fontSize={{ base: "150%" }} fontWeight={700}>
                   {exp.role}
                 </Text>
-                <Text fontSize={{ base: "1.43em" }} color={"#ffca80"}>
-                  {exp.company}
+                <Text
+                  as={"a"}
+                  fontSize={{ base: "1.43em" }}
+                  color={"#ffca80"}
+                  textDecoration={"underline"}
+                  href={exp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  display={"flex"}
+                  alignItems={"center"}
+                >
+                  {exp.company} <FiArrowUpRight />
                 </Text>
               </GridItem>
               <GridItem colSpan={2}>

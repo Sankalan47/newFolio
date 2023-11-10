@@ -1,6 +1,7 @@
 import { Text, Box } from "@chakra-ui/react";
 import { BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { Tooltip } from "@chakra-ui/react";
 import "./TweeterBtn.css";
 
 const data = {
@@ -33,22 +34,28 @@ const TweeterBtn = () => {
   return (
     <Box display={"flex"} gap={"12px"}>
       {data.socials.map((social) => (
-        <motion.a
+        <Tooltip
           key={social.name}
-          className="twitter__btn"
-          style={{
-            background: social.background,
-            color: social.color,
-            userSelect: "none",
-          }}
-          href={social.link}
-          target="_blank"
-          rel="noreferrer"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          label={social.name}
+          placement="bottom"
+          hasArrow
         >
-          <Text fontSize={20}>{social.icon}</Text>
-        </motion.a>
+          <motion.a
+            className="twitter__btn"
+            style={{
+              background: social.background,
+              color: social.color,
+              userSelect: "none",
+            }}
+            href={social.link}
+            target="_blank"
+            rel="noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <Text fontSize={20}>{social.icon}</Text>
+          </motion.a>
+        </Tooltip>
       ))}
     </Box>
   );
