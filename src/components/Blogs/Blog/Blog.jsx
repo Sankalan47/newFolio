@@ -24,6 +24,7 @@ const Blog = ({ blogData }) => {
             <Image
               aspectRatio={"1.9"}
               height={200}
+              width={"100%"}
               src={blogData.coverImage}
               fallback="Loading"
               alt={blogData.slug}

@@ -39,11 +39,15 @@ const Blogs = () => {
       )}
       {!isLoading && !error && data.user.publication.posts.length && (
         <>
-          {/* <SimpleGrid columns={{ base: 1 }} spacingX="2em" spacingY="1em"> */}
-          {data.user.publication.posts.map((blog) => (
-            <Blog key={blog.title} blogData={blog} />
-          ))}
-          {/* </SimpleGrid> */}
+          <SimpleGrid
+            columns={{ base: 1, md: 2 }}
+            spacingX="2em"
+            spacingY="1em"
+          >
+            {data.user.publication.posts.map((blog, index) => (
+              <Blog key={index} blogData={blog} />
+            ))}
+          </SimpleGrid>
         </>
       )}
     </>
