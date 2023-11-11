@@ -21,15 +21,17 @@ const Blog = ({ blogData }) => {
           _hover={{ textDecoration: "underline" }}
         >
           <Box as="a" href={url} target="_blank" rel="noopener noreferrer">
-            <Image
-              aspectRatio={"1.9"}
-              height={200}
-              width={"100%"}
-              src={blogData.coverImage}
-              fallback="Loading"
-              alt={blogData.slug}
-              borderRadius={"5px"}
-            />
+            <Box minHeight={200}>
+              <Image
+                aspectRatio={"1.9"}
+                height={200}
+                width={"100%"}
+                src={blogData.coverImage}
+                fallback="Loading"
+                alt={blogData.slug}
+                borderRadius={"5px"}
+              />
+            </Box>
             <br />
             <Divider />
             <br />

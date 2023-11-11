@@ -33,7 +33,7 @@ const Navbar = () => {
   const { colorMode } = useColorMode();
 
   const bg = useColorModeValue("orange.400", "orange.500");
-  // const borderCol = useColorModeValue("blackAlpha.500", "gray.400");
+
   return (
     <>
       <SimpleGrid columns={{ md: 3, sm: 1 }} spacing={"10px"} width={"100%"}>
@@ -46,7 +46,6 @@ const Navbar = () => {
             height={"60px"}
             padding={"12px 20px 12px 20px"}
             background="var(--chakra-colors-whiteAlpha-300)"
-            // color="var(--chakra-colors-blackAlpha-700)"
             fontWeight={700}
             alignItems="center"
             display="flex"
