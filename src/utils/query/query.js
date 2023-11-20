@@ -1,14 +1,18 @@
 import { gql } from "graphql-tag";
 
 export const GET_BLOGS = gql`
-  {
-    user(username: "imnoob") {
-      publication {
-        posts(page: 0) {
-          title
-          slug
-          brief
-          coverImage
+  query {
+    publication(host: "sankalan.hashnode.dev") {
+      posts(first: 0) {
+        edges {
+          node {
+            title
+            slug
+            brief
+            coverImage {
+              url
+            }
+          }
         }
       }
     }

@@ -26,7 +26,7 @@ const Blog = ({ blogData }) => {
                 aspectRatio={"1.9"}
                 height={200}
                 width={"100%"}
-                src={blogData.coverImage}
+                src={blogData.coverImage.url}
                 fallback="Loading"
                 alt={blogData.slug}
                 borderRadius={"5px"}
@@ -56,7 +56,7 @@ const Blog = ({ blogData }) => {
 Blog.propTypes = {
   blogData: PropTypes.shape({
     brief: PropTypes.string.isRequired,
-    coverImage: PropTypes.string.isRequired,
+    coverImage: PropTypes.shape({ url: PropTypes.string.isRequired }),
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,

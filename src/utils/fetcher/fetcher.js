@@ -1,4 +1,4 @@
 import { request } from "graphql-request";
 
-const URL = "https://api.hashnode.com/";
+const URL = "https://gql.hashnode.com/";
 export const fetcher = (query) => request(URL, query);
